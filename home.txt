@@ -1,0 +1,331 @@
+home.component.css
+
+.navbar{
+
+  padding : 0px 0px;
+  margin : 0px 0px;
+}
+
+
+#custom-nav {
+
+  box-shadow: 4px 4px 4px lightgrey;
+  
+  }
+
+  .nav-item{
+    padding: 0px 0px;
+    color: black;
+    }
+    
+  #poweredBy{
+    color : darkgrey;
+    margin: 0px;
+    padding:0px;
+    font-size: 12px;
+    }
+    
+    #eva
+    {
+    padding: 0px;
+    margin: 0px;
+    padding: 0px;
+    color: black;
+    width : 33px;
+    height : 11px;
+    }
+
+
+header{
+  position: absolute;
+  top:0;
+  left:0;
+  padding:0 100px;
+  
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+header .logo{
+  padding:0px 0px;
+    margin : 0% 0%;
+  height: 50px;
+  line-height: 50px;
+  font-size: 24px;
+  float:left;
+  font-weight: bold;
+}
+
+header .logo1{
+  padding:0px 0px;
+    margin : 0% 0%;
+  height: 50px;
+  line-height: 50px;
+ 
+  float:left;
+ 
+}
+
+header nav{
+  float: right;
+}
+
+header nav ul{
+  margin :0;
+  padding: 0;
+  display: flex;
+}
+
+header nav ul li{
+  list-style: none;
+}
+
+header nav ul li a{
+  height:50px;
+  line-height: 50px;
+  padding: 0 20px;
+  color:#fff;
+  text-decoration: none;
+  display: block;
+}
+header nav ul li a:hover,
+header nav ul li a.active{
+  color:black;
+  background: #2196f3;
+}
+
+.menu-toggle{
+  color: black;
+  float: right;
+  line-height: 50px;
+  font-size: 24px;
+  cursor:pointer;
+  display: none;
+}
+
+@media (max-width:991px)
+{
+
+  header .logo{
+    padding:2px 2px;
+    margin : 2% 0% 2% 3% ;
+    display: none;
+  }
+  #poweredBy{
+   display: none;
+    }
+    
+    #eva
+    {
+  display: none;
+    }
+  header{
+    padding: 0 20px;
+  }
+
+  .menu-toggle{
+    display: block;
+  }
+
+  header nav{
+  
+    position: absolute;
+    width: 100%;
+    height: calc(100vh -50px);
+    background: #333;
+    top:50px;
+    left:-100%;
+    transition: 0.5s;
+  } 
+
+  header nav.active{
+    left:0;
+  }
+
+
+  header nav ul{
+    display:block;
+    text-align: center;
+  }
+
+  header nav ul li a{
+    border-bottom: 1px solid rgba(0,0,0,0.2) ;
+  }
+}
+
+------------------------------------------------------------
+
+home.component.html
+
+    
+
+        <!-- <div>
+            
+            <nav class="navbar navbar-expand-sm navbar-light bg-light" id="custom-nav">
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+            
+                <li  class="navbar-brand logoimg" >
+                <img src="\assets\pdf-tmc-logo.png">
+                </li>
+            
+                <li  class="navbar-brand" id="poweredBy"> Powered by</li>
+                <li class="navbar-brand">
+                <img src="\assets\eva.png" id="eva">
+                </li>
+                <li class="greeting">|</li>
+                <li  class="greeting" >Welcome, {{details?.email}}</li>
+           
+            </div>
+            
+        
+
+
+
+
+
+            <div class="navbar-nav ml-auto">
+               
+                <li class="list">Home</li>
+            
+            
+                <li class="list">TripBox</li>
+            <li class="list1"><img src="\assets\productSelector.svg"></li>
+            <li class="list1">|</li>
+            <li class="list2">
+                <img src="\assets\profile.png">
+                <div class="dropdown">
+                <img src="\assets\dropdownIcon.svg" class="dropicon">
+            
+                <div class="dropdown-content">
+                    <li *ngIf="auth.isLoggedIn()" class="nav-item">
+                        <a class="nav-link" routerLink="" (click)="auth.logout()">Logout</a>
+                    </li>
+                </div>  
+            </div>
+            </li> 
+        
+
+            </div>
+            </div>
+            </nav>
+            </div> -->
+
+
+
+<!-- 
+            <div class="navbar navbar-default navbar-expand-sm navbar-light bg-light" id="custom-nav">
+                <div class="navbar-header">
+                  <a class="navbar-brand image"> <img src="\assets\pdf-tmc-logo.png"></a>
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                
+                <ul class="nav navbar-nav navbar-right">
+                    <li  class="navbar-brand" id="poweredBy"> Powered by</li>
+                    <li class="navbar-brand">
+                    <img src="\assets\eva.png" id="eva">
+                    </li>
+                    <li class="greeting">|</li>
+                    <li  class="greeting" >Welcome, {{details?.email}}</li>
+                    
+                </ul>
+            </div>
+                
+                  
+                    
+            <div class="navbar-nav ml-auto navbar-collapse collapse">
+               <ul  class="nav navbar-nav navbar-right ml-auto">
+                <li class="list">Home</li>
+            
+            
+                <li class="list">TripBox</li>
+            <li class="list1"><img src="\assets\productSelector.svg"></li>
+            <li class="list1">|</li>
+            <li class="list2">
+                <img src="\assets\profile.png">
+                <div class="dropdown">
+                <img src="\assets\dropdownIcon.svg" class="dropicon">
+            
+                <div class="dropdown-content">
+                    <li *ngIf="auth.isLoggedIn()" class="nav-item">
+                        <a class="nav-link" routerLink="" (click)="auth.logout()">Logout</a>
+                    </li>
+                </div>  
+            </div>
+            </li> 
+            </ul>
+        
+
+            </div>
+        
+                   </ul> 
+              
+              </div> --> 
+
+
+              <header class="navbar navbar-default  navbar-light bg-light" id="custom-nav">
+                  <div class="logo"><img src="\assets\pdf-tmc-logo.png"></div>
+                  <div id="poweredBy" class="logo1"> Powered by</div>
+                  <div id="eva" class="logo1"><sup><img src="\assets\eva.png"></sup></div>
+                  <div class="greeting" >|</div>
+                  <div class="greeting" >Welcome, {{details?.email}}</div>
+                  <nav>
+                      <ul>
+                          <li><a href="#">Home</a></li>
+                          <li><a href="#">TripBox</a></li>
+                          <div><img src="\assets\productSelector.svg"></div>
+                          <div> | </div>
+                            <div><img src="\assets\profile.png"></div>
+                                <div><div class="dropdown">
+                            <img src="\assets\dropdownIcon.svg" class="dropicon">
+                        
+                            <div class="dropdown-content">
+                                <li *ngIf="auth.isLoggedIn()" class="nav-item">
+                                    <a class="nav-link" routerLink="" (click)="auth.logout()">Logout</a>
+                                </li>
+                            </div>  
+                        </div></div>
+                      </ul>
+                  </nav>
+                  <div class="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></div>
+              </header>
+
+--------------------------------------------------
+home.component.ts
+
+import {Component } from '@angular/core'
+import {AuthenticationService, TokenPayload, UserDetails } from '../authentication.service'
+import { Router } from '@angular/router'
+import { $ } from 'protractor'
+
+
+@Component({
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+     styleUrls:['./home.component.css']
+})
+
+export class HomeComponent{
+    details:UserDetails
+
+
+  
+    constructor(public auth: AuthenticationService,private router : Router){}
+    
+
+    ngOnInit() {
+
+        this.auth.profile().subscribe(
+            user => {
+                this.details =user
+            },
+            err => {
+                console.error(err)
+            }
+        )
+    }
+}
